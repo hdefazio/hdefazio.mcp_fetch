@@ -1,0 +1,31 @@
+---
+- name: Include install manager tasks
+  ansible.builtin.include_role:
+    name: ansible.mcp_builder.common
+    tasks_from: install_manager
+
+- name: Update MCP servers manifest
+  ansible.builtin.include_role:
+    name: ansible.mcp_builder.common
+    tasks_from: generate_manifest
+
+- name: Verify Fetch MCP installation
+  ansible.builtin.command:
+    cmd: mcp_manage run {{ common_package_name }} --help
+  changed_when: false
+  register: fetch_mcp_verify_result
+  failed_when: false
+
+- name: Display verification status (success)
+  ansible.builtin.debug:
+    msg: "Fetch MCP Server installed and verified successfully."
+  when:
+    - fetch_mcp_verify_result.rc is defined
+    - fetch_mcp_verify_result.rc == 0
+
+- name: Display verification status (failure)
+  ansible.builtin.debug:
+    msg: "Fetch MCP Server verification failed. Check logs for details."
+  when:
+    - fetch_mcp_verify_result.rc is defined
+    - fetch_mcp_verify_result.rc != 0

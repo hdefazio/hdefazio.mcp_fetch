@@ -1,0 +1,8 @@
+---
+fetch_mcp_registry:
+  - name: "mcp-server-fetch"
+    type: "stdio"
+    lang: "pypi"
+    args: []
+    description: "Fetch MCP Server - Web content fetching capabilities"
+fetch_mcp_version: "2025.4.7"

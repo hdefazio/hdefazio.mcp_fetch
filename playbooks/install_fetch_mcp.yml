@@ -1,0 +1,23 @@
+---
+- name: Install Fetch MCP Server
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Ensure base functionality
+      ansible.builtin.include_role:
+        name: ansible.mcp_builder.common
+        public: true
+
+    - name: Install Fetch MCP Server
+      ansible.builtin.include_role:
+        name: hdefazio.mcp_fetch.fetch_mcp
+
+    - name: Fix ownership of all MCP installations for runtime user
+      ansible.builtin.file:
+        path: "{{ common_mcp_base_path }}"
+        state: directory
+        recurse: true
+        owner: "{{ common_runtime_user }}"
+        group: "{{ common_runtime_user }}"

@@ -1,0 +1,10 @@
+galaxy_info:
+  role_name: fetch_mcp
+  author: Hannah DeFazio
+  company: Red Hat
+  description: Installs the Fetch MCP server
+  license: GPL-3.0-or-later
+  min_ansible_version: 2.16.0
+  galaxy_tags: [mcp, fetch]
+collections:
+  - ansible.mcp_builder

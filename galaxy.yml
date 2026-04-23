@@ -1,0 +1,15 @@
+---
+namespace: hdefazio
+name: mcp_fetch
+version: 1.0.0
+readme: README.md
+authors:
+- Hannah DeFazio <h2defazio@gmail.com>
+description: Ansible collection providing the Fetch MCP server (from the modelcontextprotocol project) for Execution Environments.
+license:
+- GPL-2.0-or-later
+tags: [mcp, fetch]
+dependencies:
+  ansible.mcp_builder: ">=1.0.0"
+repository: https://github.com/hdefazio/hdefazio.mcp_fetch
+issues: https://github.com/hdefazio/hdefazio.mcp_fetch/issues
