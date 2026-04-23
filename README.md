@@ -67,9 +67,15 @@ Installs the Fetch MCP server using the `ansible.mcp_builder` framework.
 
 Installs the Fetch MCP server into the execution environment.
 
-```yaml
-ansible-playbook hdefazio.mcp_fetch.install_fetch_mcp
+**Running locally (requires sudo):**
+
+```bash
+ansible-playbook hdefazio.mcp_fetch.install_fetch_mcp -K
 ```
+
+The `-K` flag prompts for the sudo password, as the installation requires elevated privileges to install to `/opt/mcp` and create system symlinks.
+
+**In EE builds:** The `-K` flag is not required since the playbook executes with root privileges during the container build process.
 
 ## Usage in Execution Environments
 
