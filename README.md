@@ -102,7 +102,7 @@ options:
   package_manager_path: /usr/bin/microdnf
 
 additional_build_files:
-  - src: hdefazio-mcp_fetch-1.0.0.tar.gz
+  - src: hdefazio-mcp_fetch-1.1.0.tar.gz
     dest: configs
 
 additional_build_steps:
@@ -117,7 +117,7 @@ additional_build_steps:
 collections:
   - name: ansible.mcp_builder
   - name: hdefazio.mcp_fetch
-    source: /build/configs/hdefazio-mcp_fetch-1.0.0.tar.gz
+    source: /build/configs/hdefazio-mcp_fetch-1.1.0.tar.gz
     type: file
 ```
 
