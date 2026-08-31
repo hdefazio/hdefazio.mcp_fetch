@@ -5,4 +5,4 @@ fetch_mcp_registry:
     lang: "pypi"
     args: []
     description: "Fetch MCP Server - Web content fetching capabilities"
-fetch_mcp_version: "2025.4.7"
+fetch_mcp_version: "2026.8.18"
